@@ -1,0 +1,56 @@
+<header class="head">
+    <div class="navbar navbar-dark  shadow-sm">
+ <div class="navbar-brand align-items-center d-flex">
+        <i style="font-size:40px ;" class="fas fa-shipping-fast">&nbsp;</i>
+     <strong style="font-size: 30px;" href="javascript:void(0);" routerLink="/products"  >Easy Buy</strong>
+     <div class="form-group">
+          <input type="text" class="form-control"  [(ngModel)]= "searchTerm" (keyup)="search($event)" placeholder="search product">
+     </div>
+     <span class="fas fa-search search-icon"></span>
+     
+     </div>
+     
+
+    <nav class="navbar navbar-expand-md navbar-dark">
+        
+    <a class="navbar-brand" href="javascript:void(0);" ></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        
+    <ul class="navbar-nav mr-auto"  >
+        
+        <ng-container *ngIf="this.auth.isAuthenticated();then authenticated;else notAuthenticated">
+
+        </ng-container>
+          <ng-template #notAuthenticated>
+           
+          </ng-template>
+       
+          <ng-template #authenticated>
+          
+            <button mat-raised-button  class="login btn-primary" (click)="logout()">
+                logout
+            </button>
+          </ng-template>
+         
+  
+    </ul>
+  
+    </div>
+  </nav>
+     
+     <button mat-raised-button routerLink="/cart" class="byn btn-primary">
+         <i style="font-size:30px ;" class="fas fa-cart-plus"></i>
+         <div style="font-size: 10px" class="badge bg-danger">{{totalItem}}
+        
+         </div>
+     </button>
+     </div>
+ </header>
+ 
+ 
+ 

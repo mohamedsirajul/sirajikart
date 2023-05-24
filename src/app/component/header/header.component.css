@@ -1,0 +1,35 @@
+.navbar{
+    background-color: blueviolet;
+}
+
+
+.form-control{
+    border-radius: 3px;
+    width: 550px;
+    margin-left: 20px;
+}
+.search-icon{
+    position: absolute;
+    z-index: 10;
+    right: 47%;
+    color: blueviolet;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.byn{
+    color: white;
+    border-color:blueviolet ;
+    background-color: blueviolet;
+    margin-right: 10px;
+}
+.form-control{
+    margin-top: 10px;
+    height: 40px;
+}
+.login{
+    color: white;
+    border-color:blueviolet ;
+    background-color: blueviolet;
+    margin-left:380px ;
+    font-size: 20px;
+}

@@ -1,0 +1,32 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  .detailss{
+    margin-left: 37%;
+    height: 20%;
+    margin-top: 10%;
+
+  }
+
+  .firstpagenext{
+    margin-left: 60%;
+  }
+  .secondpage{
+    margin-left: 50%;
+  }
+  #example-radio-group-label{
+    margin-left: 37%;
+  }
+  .example-radio-group{
+    margin-left: 37%;
+  }
+  .example-full-width{
+    width: 500px;
+  }

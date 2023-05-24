@@ -1,0 +1,50 @@
+<form [formGroup]="userProfileForm">
+    <ng-template matStepLabel>Enter your Details</ng-template>
+      <table class="detailss">
+        <tr>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Card Number</mat-label>
+           <input matInput 
+            placeholder="Enter Your Card Number" 
+            name = "cnumber"
+            formControlName="cnumber" 
+            id="cnumber"
+            maxlength="16"
+            required>
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>CVV Code</mat-label>
+            <!-- <input matInput  placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                   required> -->
+            <input matInput 
+            placeholder="Enter your CVV Code" 
+            name = "cvvcode"
+            formControlName="cvvcode" 
+            id="cvvcode"
+            maxlength="3"
+            required >
+          </mat-form-field>
+        </tr>
+        <tr>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Validate Date</mat-label>
+            <!-- <input matInput  placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                   required> -->
+            <input matInput
+            placeholder="Enter your Validate Date" 
+            name = "cvalidatedate"
+            formControlName="cvalidatedate" 
+            id="cvalidatedate"
+            required >
+          </mat-form-field>
+        </tr>
+      </table>
+    <div>
+      <button mat-button class="firstpagenext" (click)="getpaymentdetails()" >Done</button>
+
+    </div>
+  </form>
+
+  

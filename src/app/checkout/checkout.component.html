@@ -1,0 +1,155 @@
+<mat-stepper #stepper>
+    <form [formGroup]="userProfileForm" >
+    <mat-step >
+      <form [formGroup]="userProfileForm">
+        <ng-template matStepLabel>Enter your Details</ng-template>
+          <table class="detailss">
+            <tr>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput 
+                placeholder="Enter Your Name" 
+                name = "name"
+                formControlName="name" 
+                id="name"
+                required>
+              </mat-form-field>
+            </tr>
+            <tr>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Address</mat-label>
+                <!-- <input matInput  placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                       required> -->
+                <textarea matInput placeholder="Enter your Address" 
+                name = "address"
+                formControlName="address" 
+                id="address"
+                required ></textarea>
+              </mat-form-field>
+            </tr>
+            <tr>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>E Mail</mat-label>
+                <!-- <input matInput  placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                       required> -->
+                <textarea matInput placeholder="Enter your E mail" 
+                name = "email"
+                formControlName="email" 
+                id="email"
+                required ></textarea>
+              </mat-form-field>
+            </tr>
+            <tr>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Mobile</mat-label>
+                <!-- <input matInput  placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                       required> -->
+                <textarea matInput placeholder="Enter your Mobile"
+                name = "mobile"
+                formControlName="mobile" 
+                id="mobile"
+                maxlength="10"
+                required ></textarea>
+              </mat-form-field>
+            </tr>
+          </table>
+        <div>
+          <button mat-button class="firstpagenext" matStepperNext>Next</button>
+
+        </div>
+      </form>
+    </mat-step>
+    
+    
+<mat-step>
+  <ng-template  matStepLabel>Payment Method</ng-template>
+    <label  id="example-radio-group-label">Pick your payment method</label>
+    <mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group" 
+  name = "payment"
+  formControlName="payment" 
+  id="payment"
+  >
+  <mat-radio-button   class="example-radio-button" *ngFor="let season of seasons" [value]="season"
+  >
+    {{season}}
+  </mat-radio-button>
+  <!-- (click)="payclick()" -->
+</mat-radio-group>
+    <div class="secondpage">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+    
+</mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <div>
+        <h1>Your Cart</h1>
+        <ng-container *ngIf="newcartarr.length!=0">
+    <div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            S.No
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Product Image
+                        </th>
+                    
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Total
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor ="let item of newcartarr; let i =index ">
+                        <td>
+                           {{i+1}}
+                        </td>
+                        <td>
+                            {{item.title}}
+                        </td>
+                        <td>
+                          <img style="width: 120px;" src="{{item.image}}" alt="">
+                        </td>
+                        <th style="width: 20%;">
+                            {{item.price}}
+                        </th>
+                        <td style="width: 20%;">
+                            {{item.quantity}}
+                   </td>
+                        <td style="width: 20%;">
+                            {{item.total}}
+                        </td>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    </ng-container>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button (click)="print_bill()">Clickkk</button>
+      </div>
+    </mat-step>
+    
+    </form>
+</mat-stepper>
+  
+
+
